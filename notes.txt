@@ -1,0 +1,7 @@
+----> Virutal Environment
+Create: py -3 -m venv .ticket
+Activate: .ticket\Scripts\activate 
+
+----> Github (remote origin)
+
+
