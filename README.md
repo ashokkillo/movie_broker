@@ -1,2 +1,2 @@
-# ticket_booking_app
+# Movie_broker
 Basic Ticket booking with Flask API
