@@ -1,9 +1,0 @@
-----> Virutal Environment
-Create: python -m venv *env name*
-Activate: ticket\Scripts\activate 
-
-----> Github (remote origin)
-git push origin
-
----> Bootstrap Version: 4.5.3
----> jQuery Version: 3.5.1
