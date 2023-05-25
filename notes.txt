@@ -1,0 +1,30 @@
+
+****Environment Activate:****
+.ticket/Scripts/Activate
+
+***Flask Initaite****
+set FLASK_APP=market.py
+set FLASK_DEBUG=1
+flask run
+
+***Bootstrap Version: 4.5.2***
+
+*********In python shell to start the databse for flask_sqlaclhemy=3.0.3 *******
+from market.models import db
+from market.routes import app
+app.app_context().push()
+db.create_all()
+
+#just incase extra code
+# def create():
+#     with app.app_context():
+#         db.create_all()
+******************************************************
+
+
+i1 = Item(name='laptop', price=600, barcode='123456789012', description='laptop desc')
+i2 = Item(name='phone', price=400, barcode='987456789012', description='Phone desc')  
+u1 = User(username='Ashok', email_address='ashok@gmail.com', password_hash='123456')
+
+item1 = Item.query.filter_by(name='laptop').first()
+item1.owner = User.query.filter_by(username='Ashok').first().id
