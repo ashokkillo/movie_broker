@@ -8,39 +8,48 @@ Login Form
 {% block content %}
 
     <body class="text-center mb-lg-5">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="container mt-5">
+                    <form method="POST", class="form-register", style="color:white">
+                    
+                        <img class="img-fluid" style='max-width: 25%;max-height: 25%;'src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="">
+                    
+                        <h1 class="h3 mb-3 font-weight-normal">
+                            Login Account
+                        </h1>
+                                            
+                        <br>
+                        <div class="container mb-3">
+                            {{form.username.label()}}
+                            {{form.username(class='form-control', placeholder='User Name')}}        
+                        </div>
+                        <div class="container">
+                            {{form.password1.label()}}
+                            {{form.password1(class='form-control', placeholder='Password')}}    
+                        </div>
+                        
+                        <br>
         
-        <div class="container">
-            <form method="POST", class="form-register", style="color:white">
-                
-                <img class="img-fluid" style='max-width: 25%;max-height: 25%;'src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="">
+                        <div class="mb-3">
+                            <h6>
+                                Didn't have an account ?
+                            </h6>
+                            <a class="fa fa-sign-in" href="{{url_for('register_page')}}">Sign in</a>
             
-                <h1 class="h3 mb-3 font-weight-normal">
-                    Login Account
-                </h1>
-                                    
-                <br>
-                {{form.username.label()}}
-                {{form.username(class='form-control', placeholder='User Name')}}
-    
-                {{form.password1.label()}}
-                {{form.password1(class='form-control', placeholder='Password')}}
-
-                <br>
-
-                <div class="mb-3">
-                    <h6>
-                        Didn't have an account ?
-                    </h6>
-                    <a class="fa fa-sign-in" href="{{url_for('register_page')}}">Sign in</a>
-    
+                        </div>
+        
+                        <br>
+                        
+                        {{form.submit(class='btn btn-lg btn-block btn-primary')}}
+        
+                    </form>
                 </div>
-
-                <br>
-                
-                {{form.submit(class='btn btn-lg btn-block btn-primary')}}
-    
-            </form>
+            </div>
+            <div class="col-4"></div> 
         </div>
+        
         
     </body>    
 
