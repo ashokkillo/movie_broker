@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
+from flask_bcrypt import Bcrypt
 
 load_dotenv()
 FORM_KEY = os.getenv('FORM_SECRET_KEY')
@@ -13,5 +14,7 @@ app.config['SECRET_KEY'] = FORM_KEY
 ######Database Intialize###########
 db = SQLAlchemy()
 db.init_app(app)
+
+bcrypt = Bcrypt(app)
 
 from market import routes
