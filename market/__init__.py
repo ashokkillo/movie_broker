@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
 from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 
 load_dotenv()
 FORM_KEY = os.getenv('FORM_SECRET_KEY')
@@ -16,5 +17,6 @@ db = SQLAlchemy()
 db.init_app(app)
 
 bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
 
 from market import routes
